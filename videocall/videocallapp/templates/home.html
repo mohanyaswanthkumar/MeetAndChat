@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to My Website MeetAndChat!</h1>
+    <p class="lead">This is the home page.</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'video_conference' %}" role="button">New Meeting</a>
+</div>
+
+<div class="container mt-5">
+    <h2>Join a Meeting</h2>
+    <form method="get" action="{% url 'join_meeting' %}">
+        <div class="form-group">
+            <label for="roomID">Room ID</label>
+            <input type="text" class="form-control" id="roomID" name="roomID" placeholder="Enter Room ID" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Join Meeting</button>
+    </form>
+</div>
+{% endblock %}
